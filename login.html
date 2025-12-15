@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leo De Couture | Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <script src="js/script-login.js"></script>
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Leo De Couture Logo" class="logo-img" />
+      <h2>Leo De Couture</h2>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="active">Login</a>
+      <a href="cart.html" class="cart-icon">🛒</a>
+    </div>
+  </nav>
+
+  <!-- LOGIN SECTION -->
+  <section class="login-section">
+    <div class="login-container">
+      <h2>Welcome Back</h2>
+      <p>Sign in to continue your style journey</p>
+
+      <form id="loginForm" novalidate>
+        <input type="text" id="username" placeholder="Email or Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <p id="error-message" class="error-message"></p>
+        <button type="submit">Login</button>
+
+        <div class="links">
+          <a href="#">Forgot Password?</a>
+          <a href="singin.html">Create Account</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <span>Leo De Couture</span>. All Rights Reserved.
+  </footer>
+
+  <!-- JS VALIDATION + ALERT -->
+  <script>
+    const form = document.getElementById("loginForm");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const errorMessage = document.getElementById("error-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let errors = [];
+
+      const usernameValue = username.value.trim();
+      const passwordValue = password.value.trim();
+
+      // Validate username/email
+      if (usernameValue === "") {
+        errors.push("Please enter your email or username.");
+      } else if (usernameValue.includes("@")) {
+        const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+        if (!emailRegex.test(usernameValue)) {
+          errors.push("Please enter a valid email address.");
+        }
+      }
+
+      // Validate password
+      if (passwordValue === "") {
+        errors.push("Please enter your password.");
+      } else if (passwordValue.length < 8) {
+        errors.push("Password must be at least 8 characters long.");
+      }
+
+      if (errors.length > 0) {
+        errorMessage.innerText = errors.join(" ");
+        errorMessage.style.display = "block";
+      } else {
+        errorMessage.style.display = "none";
+
+        // ✅ Success Alert
+        alert("✅ Login successful! Welcome back to Leo De Couture.");
+
+        // Optional: clear form
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

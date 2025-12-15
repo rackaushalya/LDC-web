@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | Leo De Couture</title>
+  <link rel="stylesheet" href="product-details.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo-area">
+        <img src="images/logo.png" alt="Leo De Couture Logo" class="logo-img" />
+        <h1 class="logo-text">Leo De Couture</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cart.html" class="cart-btn">🛒</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRODUCT DETAILS -->
+  <section class="product-details container">
+    <div class="product-image">
+      <img id="detailImage" src="" alt="">
+    </div>
+    <div class="product-info">
+      <h1 id="detailName"></h1>
+      <p class="price" id="detailPrice"></p>
+      <p class="desc" id="detailDesc">Crafted with precision and premium fabrics, this piece reflects the elegance of modern menswear.</p>
+      <button id="addToCartBtn">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <span>Leo De Couture</span>. All Rights Reserved.
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Get product ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    // ✅ FULL product data (all 24)
+    const allProducts = [
+      // FORMAL
+      { id: "1", name: "Classic Navy Blazer", price: 65000, image: "images/formal1.jpg" },
+      { id: "2", name: "Charcoal Slim-Fit Suit", price: 82000, image: "images/formal2.jpg" },
+      { id: "3", name: "Tailored Black Trousers", price: 42000, image: "images/formal3.jpg" },
+      { id: "4", name: "White Dress Shirt", price: 28500, image: "images/formal4.jpg" },
+      { id: "5", name: "Silk Tie", price: 12000, image: "images/formal5.jpg" },
+      { id: "6", name: "Pinstripe Suit", price: 75000, image: "images/formal6.jpg" },
+      { id: "7", name: "Oxford Shoes", price: 45000, image: "images/formal8.jpg" },
+      { id: "8", name: "Cufflinks Set", price: 18000, image: "images/formal12.jpg" },
+
+      // CASUAL
+      { id: "9", name: "Linen Shirt", price: 22000, image: "images/casual1.jpg" },
+      { id: "10", name: "Polo T-Shirt", price: 18500, image: "images/casual2.jpg" },
+      { id: "11", name: "Denim Jacket", price: 32000, image: "images/casual3.jpg" },
+      { id: "12", name: "Casual Chinos", price: 28000, image: "images/casual4.jpg" },
+      { id: "13", name: "Crewneck Sweater", price: 30000, image: "images/casual5.jpg" },
+      { id: "14", name: "Bomber Jacket", price: 34000, image: "images/casual6.jpg" },
+      { id: "15", name: "Casual Sneakers", price: 25000, image: "images/casual8.jpg" },
+      { id: "16", name: "Hoodie", price: 27500, image: "images/casual10.jpg" },
+
+      // ACCESSORIES
+      { id: "17", name: "Leather Watch", price: 52000, image: "images/accessory1.jpg" },
+      { id: "18", name: "Perfume Bottle", price: 24500, image: "images/accessory2.jpg" },
+      { id: "19", name: "Sunglasses", price: 21000, image: "images/accessory3.jpg" },
+      { id: "20", name: "Leather Wallet", price: 18500, image: "images/accessory4.jpg" },
+      { id: "21", name: "Bracelet", price: 17000, image: "images/accessory5.jpg" },
+      { id: "22", name: "Brooch Pin", price: 13000, image: "images/accessory10.jpg" },
+      { id: "23", name: "Pocket Square", price: 10500, image: "images/accessory11.jpg" },
+      { id: "24", name: "Leather Gloves", price: 22000, image: "images/accessory12.jpg" }
+    ];
+
+    const product = allProducts.find(p => p.id === id);
+
+    if (product) {
+      document.getElementById("detailImage").src = product.image;
+      document.getElementById("detailName").textContent = product.name;
+      document.getElementById("detailPrice").textContent = "LKR " + product.price.toLocaleString();
+    } else {
+      document.querySelector(".product-details").innerHTML = "<h2>Product not found!</h2>";
+    }
+
+    // ✅ Add to cart function with popup
+    document.getElementById("addToCartBtn").addEventListener("click", () => {
+      if (!product) return;
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.id === product.id);
+
+      if (existing) existing.quantity++;
+      else cart.push({ ...product, quantity: 1 });
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // Pop-up message
+      const alertBox = document.createElement("div");
+      alertBox.textContent = "✅ Added to cart!";
+      alertBox.style.position = "fixed";
+      alertBox.style.bottom = "30px";
+      alertBox.style.right = "30px";
+      alertBox.style.background = "#b89b5e";
+      alertBox.style.color = "#fff";
+      alertBox.style.padding = "12px 20px";
+      alertBox.style.borderRadius = "8px";
+      alertBox.style.boxShadow = "0 3px 10px rgba(0,0,0,0.3)";
+      document.body.appendChild(alertBox);
+      setTimeout(() => alertBox.remove(), 2000);
+    });
+  </script>
+
+</body>
+</html>

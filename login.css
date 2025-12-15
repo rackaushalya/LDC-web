@@ -1,0 +1,171 @@
+/* ------------------------------
+   Leo De Couture | LOGIN PAGE
+-------------------------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("images/login-bg.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(17,17,17,0.9);
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #b89b5e;
+  object-fit: cover;
+}
+.navbar h2 {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nav-links a {
+  color: #fff;
+  margin: 0 14px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #b89b5e;
+}
+.nav-links a.cart-icon {
+  font-size: 1.2rem;
+}
+.nav-links a.cart-icon:hover {
+  transform: scale(1.1);
+  color: #b89b5e;
+  transition: 0.3s ease;
+}
+
+/* Login Section */
+.login-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  padding: 60px 20px;
+}
+
+.login-container {
+  background-color: rgba(17,17,17,0.85);
+  padding: 50px 40px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.login-container h2 {
+  color: #b89b5e;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.login-container p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  background-color: #b89b5e;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.links a {
+  color: #b89b5e;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.links a:hover {
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(17,17,17,0.9);
+  color: #ccc;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+footer span {
+  color: #b89b5e;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .login-container {
+    padding: 40px 25px;
+  }
+  .login-container h2 {
+    font-size: 1.6rem;
+  }
+}
+/* Error Message */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin: -5px 0 10px 0;
+  display: none;
+  text-align: left;
+  padding-left: 5px;
+}

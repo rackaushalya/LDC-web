@@ -1,0 +1,247 @@
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #111;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 2px solid #b89b5e;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #b89b5e;
+  object-fit: cover;
+}
+
+.navbar h2 {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #b89b5e;
+}
+
+.nav-links a.cart-icon {
+  font-size: 1.3rem;
+}
+
+.nav-links a.cart-icon:hover {
+  transform: scale(1.1);
+  color: #b89b5e;
+}
+
+/* ===== PROFILE SECTION ===== */
+.profile-section {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+.profile-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 40px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-header .profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #b89b5e;
+  margin-bottom: 15px;
+}
+
+.profile-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.profile-header button {
+  background-color: #b89b5e;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.profile-header button:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Profile Info */
+.profile-info {
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.profile-info h3 {
+  font-family: "Playfair Display", serif;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.profile-info p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.track-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.track-btn button {
+  background-color: #b89b5e;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.track-btn button:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Order History */
+.order-history {
+  margin-bottom: 40px;
+}
+
+.order-history h3 {
+  font-family: "Playfair Display", serif;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.order-history table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.order-history th,
+.order-history td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.order-history th {
+  background-color: #111;
+  color: #fff;
+}
+
+.order-history tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Sign Out Button */
+.logout-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.logout-btn button {
+  background-color: #b89b5e;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.logout-btn button:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  background: #111;
+  color: #b89b5e;
+  padding: 20px 0;
+  font-size: 0.95rem;
+  margin-top: 60px;
+}
+
+footer span {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 25px;
+  }
+}

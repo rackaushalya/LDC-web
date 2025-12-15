@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking | Leo De Couture</title>
+  <link rel="stylesheet" href="order-tracking.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Leo De Couture Logo" class="logo-img" />
+      <h2>Leo De Couture</h2>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="profile.html">Profile</a>
+      <a href="cart.html" class="cart-icon">🛒</a>
+    </div>
+  </nav>
+
+  <!-- ORDER TRACKING SECTION -->
+  <section class="tracking-section">
+    <div class="tracking-container">
+      <h1>Order Tracking</h1>
+      <p>Track your latest order below 👇</p>
+
+      <div class="tracking-card">
+        <h2>Order #1040</h2>
+        <p><strong>Order Date:</strong> October 5, 2025</p>
+        <p><strong>Delivery Address:</strong> 56 Lake Road, Kandy</p>
+        <p><strong>Total:</strong> LKR 12,300</p>
+
+        <div class="timeline">
+          <div class="step completed">
+            <span>📦</span>
+            <p>Order Confirmed</p>
+          </div>
+          <div class="step completed">
+            <span>🚚</span>
+            <p>Shipped</p>
+          </div>
+          <div class="step active">
+            <span>🛵</span>
+            <p>Out for Delivery</p>
+          </div>
+          <div class="step">
+            <span>🏠</span>
+            <p>Delivered</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="back-btn">
+        <button onclick="window.location.href='profile.html'">← Back to Profile</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <span>Leo De Couture</span>. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

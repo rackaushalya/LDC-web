@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Leo De Couture</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Leo De Couture Logo" class="logo-img">
+      <h2>Leo De Couture</h2>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="profile.html" class="profile-icon">👤</a>
+      <a href="cart.html" class="cart-icon active">🛒</a>
+    </div>
+  </nav>
+
+  <!-- CART SECTION -->
+  <section class="cart-section">
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-container">
+
+      <!-- CART ITEMS -->
+      <div class="cart-items">
+
+        <!-- FORMAL ITEM -->
+        <div class="cart-item">
+          <img src="images/formal1.jpg" alt="Classic Navy Blazer">
+          <div class="item-details">
+            <h3>Classic Navy Blazer</h3>
+            <p>Category: Formal Wear</p>
+            <p class="price">Rs. 65,000</p>
+            <div class="quantity">
+              <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <input type="text" value="1" readonly>
+              <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+        </div>
+
+        <!-- CASUAL ITEM -->
+        <div class="cart-item">
+          <img src="images/casual3.jpg" alt="Denim Jacket">
+          <div class="item-details">
+            <h3>Denim Jacket</h3>
+            <p>Category: Casual Wear</p>
+            <p class="price">Rs. 32,000</p>
+            <div class="quantity">
+              <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <input type="text" value="1" readonly>
+              <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+        </div>
+
+        <!-- ACCESSORY ITEM -->
+        <div class="cart-item">
+          <img src="images/accessory1.jpg" alt="Leather Watch">
+          <div class="item-details">
+            <h3>Leather Watch</h3>
+            <p>Category: Accessories</p>
+            <p class="price">Rs. 52,000</p>
+            <div class="quantity">
+              <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+              <input type="text" value="1" readonly>
+              <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+        </div>
+
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-details">
+          <p><span>Subtotal:</span> <span id="subtotal">Rs. 149,000</span></p>
+          <p><span>Shipping:</span> <span>Rs. 2,500</span></p>
+          <hr>
+          <p class="total"><span>Total:</span> <span id="total">Rs. 151,500</span></p>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>Leo De Couture</span>. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function changeQty(btn, delta) {
+      const input = btn.parentNode.querySelector('input');
+      let qty = parseInt(input.value);
+      qty = Math.max(1, qty + delta);
+      input.value = qty;
+      updateTotals();
+    }
+
+    function removeItem(btn) {
+      btn.parentNode.remove();
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const items = document.querySelectorAll('.cart-item');
+      let subtotal = 0;
+      items.forEach(item => {
+        const priceText = item.querySelector('.price').innerText.replace('Rs. ', '').replace(',', '');
+        const price = parseInt(priceText);
+        const qty = parseInt(item.querySelector('input').value);
+        subtotal += price * qty;
+      });
+      document.getElementById('subtotal').innerText = `Rs. ${subtotal.toLocaleString()}`;
+      document.getElementById('total').innerText = `Rs. ${(subtotal + 2500).toLocaleString()}`;
+    }
+
+    function checkout() {
+      alert("Thank you for your purchase! Redirecting to payment...");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

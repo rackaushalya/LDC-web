@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leo De Couture | Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Leo De Couture Logo" class="logo-img" />
+      <h2>Leo De Couture</h2>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="cart.html" class="cart-icon">🛒</a>
+    </div>
+  </nav>
+
+  <!-- PROFILE SECTION -->
+  <section class="profile-section">
+    <div class="profile-container">
+      <div class="profile-header">
+        <img src="images/user.jpg" alt="User Photo" class="profile-img">
+        <h2 id="userName">Chamika Kaushalya</h2>
+        <button onclick="editProfile()">Edit Profile</button>
+      </div>
+
+      <div class="profile-info">
+        <h3>Profile Information</h3>
+        <p><strong>Email:</strong> chamika.kaushalya@example.com</p>
+        <p><strong>Phone:</strong> +94 77 654 3210</p>
+        <p><strong>Address:</strong> 56 Lake Road, Kandy, Sri Lanka</p>
+
+        <div class="track-btn">
+          <button onclick="window.location.href='order-tracking.html'">Track My Orders</button>
+        </div>
+      </div>
+
+      <div class="order-history">
+        <h3>Recent Orders</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total (LKR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1025</td>
+              <td>2025-09-12</td>
+              <td>Delivered</td>
+              <td>18,500</td>
+            </tr>
+            <tr>
+              <td>#1033</td>
+              <td>2025-09-28</td>
+              <td>Processing</td>
+              <td>9,800</td>
+            </tr>
+            <tr>
+              <td>#1040</td>
+              <td>2025-10-05</td>
+              <td>Shipped</td>
+              <td>12,300</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SIGN OUT BUTTON -->
+      <div class="logout-btn">
+        <button onclick="signOut()">Sign Out</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <span>Leo De Couture</span>. All Rights Reserved.
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function editProfile() {
+      alert("Profile editing feature is under construction ✨");
+    }
+
+    function signOut() {
+      alert("✅ Successfully signed out!");
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

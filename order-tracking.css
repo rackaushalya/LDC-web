@@ -1,0 +1,155 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #222;
+  margin: 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #111;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #b89b5e;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #b89b5e;
+  object-fit: cover;
+}
+.navbar h2 {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #b89b5e;
+}
+
+/* ===== TRACKING SECTION ===== */
+.tracking-section {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
+.tracking-container {
+  width: 90%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+.tracking-card {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 25px;
+}
+.tracking-card h2 {
+  color: #111;
+  font-family: "Playfair Display", serif;
+}
+.tracking-card p {
+  margin: 8px 0;
+}
+
+/* TIMELINE */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background: #ddd;
+  z-index: 1;
+}
+.step {
+  text-align: center;
+  z-index: 2;
+  flex: 1;
+  position: relative;
+}
+.step span {
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.step.completed span {
+  color: #b89b5e;
+}
+.step.active span {
+  color: #111;
+  animation: pulse 1.2s infinite;
+}
+.step p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.back-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-btn button {
+  background-color: #b89b5e;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.back-btn button:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #111;
+  color: #b89b5e;
+  padding: 20px 0;
+  margin-top: 60px;
+}
+footer span {
+  color: #fff;
+  font-weight: bold;
+}
