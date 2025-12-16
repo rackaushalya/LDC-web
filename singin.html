@@ -30,14 +30,12 @@
       <h2>Create Your Account</h2>
       <p>Join Leo De Couture and redefine your style</p>
 
-      <form id="signupForm" novalidate>
-        <input type="text" id="fullname" placeholder="Full Name" required />
-        <input type="email" id="email" placeholder="Email Address" required />
-        <input type="text" id="username" placeholder="Username" required />
-        <input type="password" id="password" placeholder="Password (min 8 characters)" required />
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
-
-        <p id="error-message" class="error-message"></p>
+      <!-- IMPORTANT: action + method -->
+      <form action="signuphandler.php" method="POST">
+        <input type="text" name="fullname" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
 
         <button type="submit">Create Account</button>
 
@@ -52,50 +50,6 @@
   <footer>
     © 2025 <span>Leo De Couture</span>. All Rights Reserved.
   </footer>
-
-  <!-- JS VALIDATION + REDIRECT -->
-  <script>
-    const form = document.getElementById("signupForm");
-    const fullName = document.getElementById("fullname");
-    const email = document.getElementById("email");
-    const username = document.getElementById("username");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmPassword");
-    const errorMessage = document.getElementById("error-message");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      let errors = [];
-
-      const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-
-      if (fullName.value.trim() === "") {
-        errors.push("Please enter your full name.");
-      }
-      if (!emailRegex.test(email.value.trim())) {
-        errors.push("Please enter a valid email address.");
-      }
-      if (username.value.trim() === "") {
-        errors.push("Please choose a username.");
-      }
-      if (password.value.length < 8) {
-        errors.push("Password must be at least 8 characters long.");
-      }
-      if (password.value !== confirmPassword.value) {
-        errors.push("Passwords do not match.");
-      }
-
-      if (errors.length > 0) {
-        errorMessage.innerText = errors.join(" ");
-        errorMessage.style.display = "block";
-      } else {
-        errorMessage.style.display = "none";
-        alert("✅ Account created successfully! Welcome to Leo De Couture.");
-        // Redirect to Home Page
-        window.location.href = "index.html";
-      }
-    });
-  </script>
 
 </body>
 </html>
