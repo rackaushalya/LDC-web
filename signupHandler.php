@@ -31,12 +31,7 @@ if (!$sql) {
 }
 
 
-if (!mysqli_stmt_execute($stmt)) {
-  die("Insert error: " . mysqli_error($con));
-}
 
-mysqli_stmt_close($stmt);
-mysqli_close($con);
 
 // redirect after success
 header("Location: login.html");
